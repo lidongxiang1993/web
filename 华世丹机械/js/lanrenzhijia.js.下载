@@ -1,0 +1,9 @@
+$(function(){		
+	$('.title-list li').mouseover(function(){
+		var liindex = $('.title-list li').index(this);
+		$(this).addClass('cp_on').siblings().removeClass('cp_on');
+		$('.product-wrap div.product').eq(liindex).fadeIn(150).siblings('div.product').hide();
+		var liWidth = $('.title-list p').width();
+		$('.al_1 .title-list p').stop(false,true).animate({'left' : liindex * liWidth + 'px'},300);
+	});
+	});
