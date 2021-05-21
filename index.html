@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>easywork移动端下载</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="group-box">
+      <div class="group-row">
+        <div class="flex-item">
+          <a href="https://downloadpkg.app3c.cn/app/download?path=http://A6010528517640.qiniucdn.apicloud-system.com/3cdb5517d499644010bbcd0cee7eee9f_d"
+            download="android">
+            <img src="./app_icon.png" alt="icon" class="download-icon">
+            <div class="">1.0.0</div>
+            <div class="download-font">android点击下载</div>
+          </a>
+        </div>
+        <!--<div class="row-spacer">1</div>-->
+        <!--<div class="flex-item">-->
+        <!--  <img src="./android.png" alt="icon" class="download-icon">-->
+        <!--  <div class="download-font">扫码下载</div>-->
+        <!--</div>-->
+      </div>
+      <div class="column-spacer">1</div>
+      <div class="group-row">
+        <div class="flex-item" onclick="handleClick()">
+          <!-- <a href="https://gitee.com/Me-Lee/zhengzhou-pms/raw/master/pms.plist" download="pms.plist"> -->
+            <img src="./app_icon.png" alt="icon" class="download-icon">
+            <div class="">1.0.0</div>
+            <div class="download-font">ios点击下载</div>
+          <!-- </a> -->
+        </div>
+        <div class="row-spacer">1</div>
+        <!--<div class="flex-item">-->
+        <!--  <img src="./ios.png" alt="icon" class="download-icon">-->
+        <!--  <div class="download-font">扫码下载</div>-->
+        <!--</div>-->
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  function handleClick() {
+    const elink = document.createElement('a');
+    elink.style.display = 'none';
+    elink.href = 'https://gitee.com/Me-Lee/zhengzhou-pms/raw/master/pms.plist'
+    document.body.appendChild(elink);
+    elink.click();
+    URL.revokeObjectURL(elink.href); // 释放URL 对象
+    document.body.removeChild(elink);
+  }
+</script>
+<style>
+  .container {
+    width: 100wh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .group-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .group-row {
+    display: flex;
+    border: 1px solid #f5f5f5;
+    padding: 10px;
+    box-shadow: 6px 3px 5px #f1f1f1;
+  }
+
+  .column-spacer {
+    width: 60px;
+    visibility: hidden;
+  }
+
+  .download-icon {
+    width: 80px;
+    height: 80px;
+    padding: 20px;
+  }
+
+  .download-font {
+    margin-top: 6px;
+    font-size: 12px;
+  }
+
+  .flex-item {
+    text-align: center;
+  }
+
+  .row-spacer {
+    width: 20px;
+    visibility: hidden;
+  }
+</style>
+
+</html>
